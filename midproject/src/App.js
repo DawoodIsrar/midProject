@@ -1,22 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Homepage from "./components/Homepage";
-import History from "./components/History";
+import { useState } from "react";
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Homepage from './components/Homepage';
+import Navbar from './components/Navbar';
+import History from './components/History';
+
+
+
 
 function App() {
+
   return (
-    <>
-<<<<<<< HEAD
-      <Navbar />
-      <Homepage />
-      <History />
-=======
-    <h1>Helo</h1>
-    <h1>Git push Test</h1>
->>>>>>> ea582d59bd1880925aaebb420e0e1a41979390e0
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Navbar/>}> 
+          <Route index element={<Homepage/>}/>
+          <Route path="History" element={<History/>}/>
+          </Route> 
+     </Routes>
+   </BrowserRouter>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+
 export default function History() {
   return (
     <table className="tab">
@@ -19,5 +19,4 @@ export default function History() {
     </table>
     
   );
-  <Outlet/>
 }

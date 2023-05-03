@@ -7,17 +7,16 @@ export default function Homepage() {
 
   
   return (
-    <>
-    
-    <form>
-      <input type="text" id="txt" placeholder="Enter URL" ></input>
-      <input type="date"></input>
+    <div className="home">
+      <h1 class="heading">URL Shortern</h1>
+        <form class="form">
+         <input class="input1" type="Url" id="txt" placeholder="Enter URL" ></input><br></br><br></br>
+         <input class="dte" type="date"></input>
+         <button class="btn" >Get Short URL </button>
+         </form>
       
-      </form>
-      <button >Get Short URL </button>
-     
-      <span id="shrtUrl"></span>
-    </>
+      
+    </div>
   );
 
   }

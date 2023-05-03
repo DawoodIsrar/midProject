@@ -8,9 +8,14 @@ import History from "./components/History";
 function App() {
   return (
     <>
+<<<<<<< HEAD
       <Navbar />
       <Homepage />
       <History />
+=======
+    <h1>Helo</h1>
+    <h1>Git push Test</h1>
+>>>>>>> ea582d59bd1880925aaebb420e0e1a41979390e0
     </>
   );
 }

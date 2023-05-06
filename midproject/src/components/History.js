@@ -1,41 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 export default function History() {
   const key = "s-url";
-  var array = localStorage.getItem(key);
-  var data = array ? [JSON.parse(array)] : []; // check if array is null
-  var newdata = data[0]
+  const [historyData, setHistoryData] = useState(() => {
+    const array = localStorage.getItem(key);
+    const data = array ? [JSON.parse(array)] : [];
+    return data[0] || [];
+  });
+
+  const handleDelete = (index) => {
+    const newData = [...historyData];
+    newData.splice(index, 1);
+    setHistoryData(newData);
+    localStorage.setItem(key, JSON.stringify(newData));
+  };
+
+  const handleEdit = (index) => {
+   
+  };
+
   return (
     <>
       <h1 id="historyh1">History</h1>
-      {
-        newdata?.length > 0 ?
-         <table id="table" className="tab">
-        <thead>
-             <tr>
-               <th>URL</th>
-               <th>shortened URL</th>
-               <th>Expiry Date</th>
-             </tr>
-           </thead>
-        {  newdata?.map((history) => (
-           
-           <tbody>
-              <tr  key={history}>
+      {historyData.length > 0 ? (
+        <table id="table" className="tab">
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th>Shortened URL</th>
+              <th>Expiry Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {historyData.map((history, index) => (
+              <tr key={index}>
                 <td>{history.url}</td>
-                <td>{history.shortUrl}</td> {/* Use correct key name */}
+                <td>{history.shortUrl}</td>
                 <td>{history.date}</td>
+                <td>
+                  <button onClick={() => handleEdit(index)}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button onClick={() => handleDelete(index)}>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </td>
               </tr>
-            </tbody>
-           
-        
-         
-        ) ) }
-  
-  </table>
-  : <h3 id='no' >No Data</h3>
-      }
-     
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>No history found.</p>
+      )}
     </>
   );
 }

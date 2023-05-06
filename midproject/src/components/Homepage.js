@@ -7,8 +7,10 @@ export default function Homepage() {
     var arr = [];
     const key = "s-url";
     const existingData = JSON.parse(localStorage.getItem(key)) || [];
+    
     var data = {
       url: name,
+      shortUrl:`s-url/${Math.floor(Math.random()*999)}`,
       date: date,
     };
 
@@ -47,6 +49,7 @@ export default function Homepage() {
           Get Short URL{" "}
         </button>
       </form>
+      <h1 id='s-url'></h1>
     </div>
   );
 }

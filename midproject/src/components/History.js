@@ -8,29 +8,34 @@ export default function History() {
   return (
     <>
       <h1 id="historyh1">History</h1>
-      <table id="table" className="tab">
-      <thead>
-           <tr>
-             <th>URL</th>
-             <th>shortened URL</th>
-             <th>Expiry Date</th>
-           </tr>
-         </thead>
-      {newdata.map((history) => (
+      {
+        newdata?.length > 0 ?
+         <table id="table" className="tab">
+        <thead>
+             <tr>
+               <th>URL</th>
+               <th>shortened URL</th>
+               <th>Expiry Date</th>
+             </tr>
+           </thead>
+        {  newdata?.map((history) => (
+           
+           <tbody>
+              <tr  key={history}>
+                <td>{history.url}</td>
+                <td>{history.shortUrl}</td> {/* Use correct key name */}
+                <td>{history.date}</td>
+              </tr>
+            </tbody>
+           
+        
          
-         <tbody>
-            <tr  key={history}>
-              <td>{history.url}</td>
-              <td>{history.date}</td> {/* Use correct key name */}
-              {/* <td>{history.expiry}</td> */}
-            </tr>
-          </tbody>
-         
-      
-       
-      ))}
-
-</table>
+        ) ) }
+  
+  </table>
+  : <h3 id='no' >No Data</h3>
+      }
+     
     </>
   );
 }

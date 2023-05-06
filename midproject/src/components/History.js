@@ -14,7 +14,7 @@ export default function History() {
         <thead>
              <tr>
                <th>URL</th>
-               <th>shortened URL</th>
+               <th>Shortened URL</th>
                <th>Expiry Date</th>
              </tr>
            </thead>

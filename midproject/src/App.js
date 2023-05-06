@@ -5,6 +5,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Homepage from './components/Homepage';
 import Navbar from './components/Navbar';
 import History from './components/History';
+import ContactUS from "./components/ContactUS";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Navbar/>}> 
           <Route index element={<Homepage/>}/>
           <Route path="History" element={<History/>}/>
+          <Route path="ContactUS" element={<ContactUS/>}/>
           </Route> 
      </Routes>
    </BrowserRouter>

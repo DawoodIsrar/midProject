@@ -13,10 +13,11 @@
 
 /* border: 1px solid;  */
 border-collapse: collapse;
+
  }
 table{
-  width: 70%;
-  margin-left: 10%;
+  width: 90%;
+  margin-left:  5%;
   
 }
 td{
@@ -32,12 +33,11 @@ td{
   color: #282c34;
 }
 thead {
-  background-color: #1c87c9;
+  background-color: #012967;
   color: #ffffff;
 }
 th {
   text-align: center;
-  height: 50px;
 }
 tbody tr:nth-child(even) {
   background:#f5deb3;
@@ -81,6 +81,7 @@ tr{
   color: aliceblue;
   font-family: sans-serif;
   font-weight: 100;
+  margin-top: 10%;
 }
 .home{
   width: 100%;
@@ -96,7 +97,7 @@ tr{
   margin-left: 25%;
 }
 .input1{
-  width: 65%;
+  width: 65.5%;
   height: 45px;
   border: none;
   border-radius: 4px;
@@ -112,7 +113,7 @@ tr{
   border-radius: 4px;
 }
 .btn{
-  width: 43%;
+  width: 44%;
   height: 30px;
   border: none;
   border-radius: 4px;
@@ -124,10 +125,17 @@ tr{
  
 }
  #div-url{
-  height:30px;
+  margin-inline: 0%;
+  margin-top: 2%;
+  height: 26px;
+  border-radius: 4px;
+  border: none;
+  background-color: goldenrod;
+  width: 66%;
   text-align: center;
-  background-color: white;
-  
-  margin: 10% 40%;
-  padding: 0px 10px;
+ }
+ .contact{
+  font-size: 100px;
+  opacity: 0.5;
+  text-align: center;
  }

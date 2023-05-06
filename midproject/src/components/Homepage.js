@@ -58,13 +58,13 @@ export default function Homepage() {
         </input>
        
         <button type="submit" class="btn" onClick={btn}>
-          Get Short URL{" "}
+          Convert URL{" "}
         </button>
       
-      <div id='div-url' style={{display:"none"}}>
+      <span id='div-url' style={{display:"none"}}>
       <span id="s-url"> </span>
       <span><i class="fa-regular fa-copy fa-shake" onClick={copy} > </i></span>
-      </div>
+      </span>
       </form>
     </div>
   );

@@ -46,25 +46,26 @@ export default function Homepage() {
           id="txt"
           placeholder="Enter URL"
           value={name}
-          onChange={(e) => setName(e.target.value)}
-        ></input>
+          onChange={(e) => setName(e.target.value)}>
+        </input>
         <br></br>
         <br></br>
         <input
           class="dte"
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
-        ></input>
+          onChange={(e) => setDate(e.target.value)}>
+        </input>
        
         <button type="submit" class="btn" onClick={btn}>
           Get Short URL{" "}
         </button>
-      </form>
+      
       <div id='div-url' style={{display:"none"}}>
       <span id="s-url"> </span>
       <span><i class="fa-regular fa-copy fa-shake" onClick={copy} > </i></span>
       </div>
+      </form>
     </div>
   );
 }

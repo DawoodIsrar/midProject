@@ -122,5 +122,12 @@ tr{
 #no{
  padding-left: 47%;
  
-  
 }
+ #div-url{
+  height:30px;
+  text-align: center;
+  background-color: white;
+  
+  margin: 10% 40%;
+  padding: 0px 10px;
+ }

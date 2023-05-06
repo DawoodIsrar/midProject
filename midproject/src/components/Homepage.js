@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import History from "./History";
 import Navbar from "./Navbar";
 export default function Homepage() {
-  const btn = (e) => {
+    
+    const btn = (e) => {
     e.preventDefault();
     var arr = [];
     const key = "s-url";
@@ -20,9 +21,20 @@ export default function Homepage() {
     console.log(localStorage.getItem(key));
     setDate('')
     setName('')
+    document.getElementById("s-url").innerHTML=`${data.shortUrl}`;
+    setCp(data.shortUrl) ;
+    document.getElementById("div-url").style.display="inline-block"
   };
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
+  const[cp,setCp]=useState("")
+  const copy=()=>{
+    
+    navigator.clipboard.writeText(cp);
+  
+
+  }
+
 
   return (
     <div className="home">
@@ -49,7 +61,10 @@ export default function Homepage() {
           Get Short URL{" "}
         </button>
       </form>
-      <h1 id='s-url'></h1>
+      <div id='div-url' style={{display:"none"}}>
+      <span id="s-url"> </span>
+      <span><i class="fa-regular fa-copy fa-shake" onClick={copy} > </i></span>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 export default function History() {
+  const [visible,setVisible] = useState(false)
+  const [udate,setUdate] = useState("");
+  const [indexx,setIndexx] = useState("")
   const key = "s-url";
   const [historyData, setHistoryData] = useState(() => {
     const array = localStorage.getItem(key);
@@ -18,8 +21,17 @@ export default function History() {
   };
 
   const handleEdit = (index) => {
+    setVisible(true);
+    setIndexx(index)
    
   };
+  const updaetDate = ()=>{
+    setVisible(false)
+    var uparray = [...historyData]
+    uparray[indexx].date = udate
+    console.log(uparray)
+    localStorage.setItem(key, JSON.stringify(uparray));
+  }
 
   return (
     <>
@@ -41,6 +53,16 @@ export default function History() {
                 <td>{history.shortUrl}</td>
                 <td>{history.date}</td>
                 <td>
+                  
+                 {indexx == index &&  <form >
+                  {visible && <>
+                    <input type="date" onChange={(e)=>{setUdate(e.target.value)}}></input>
+                  <button onClick={updaetDate}>update</button>
+                  </>
+                  
+                  }
+                    
+                  </form>}
                   <button onClick={() => handleEdit(index)}>
                     <FontAwesomeIcon icon={faEdit} />
                   </button>

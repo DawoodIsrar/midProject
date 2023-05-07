@@ -24,7 +24,6 @@ export default function History() {
   return (
     <>
       <h1 id="historyh1">History</h1>
-<<<<<<< HEAD
       {historyData.length > 0 ? (
         <table id="table" className="tab">
           <thead>
@@ -38,22 +37,6 @@ export default function History() {
           <tbody>
             {historyData.map((history, index) => (
               <tr key={index}>
-=======
-      {
-        newdata?.length > 0 ?
-         <table id="table" className="tab">
-        <thead>
-             <tr>
-               <th>URL</th>
-               <th>Shortened URL</th>
-               <th>Expiry Date</th>
-             </tr>
-           </thead>
-        {  newdata?.map((history) => (
-           
-           <tbody>
-              <tr  key={history}>
->>>>>>> 8446eefd4573c38cddc30a5914b42300375561d2
                 <td>{history.url}</td>
                 <td>{history.shortUrl}</td>
                 <td>{history.date}</td>

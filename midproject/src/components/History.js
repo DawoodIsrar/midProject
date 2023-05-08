@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faExternalLinkSquareAlt, faLink, faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
 export default function History() {
   const [visible,setVisible] = useState(false)
   const [udate,setUdate] = useState("");
   const [indexx,setIndexx] = useState("")
+  const [linkUrl,setLinkUrl]=useState("")
   const key = "s-url";
   const [historyData, setHistoryData] = useState(() => {
     const array = localStorage.getItem(key);
@@ -31,6 +33,11 @@ export default function History() {
     uparray[indexx].date = udate
     console.log(uparray)
     localStorage.setItem(key, JSON.stringify(uparray));
+  }
+  const handleLink = (index)=>{
+   var array = [...historyData];
+   setLinkUrl(array[index].url)
+   
   }
 
   return (
@@ -68,6 +75,11 @@ export default function History() {
                   </button>
                   <button onClick={() => handleDelete(index)}>
                     <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                  <button onClick={() => handleLink(index)}>
+                  <a href={linkUrl} target="_blank">  
+                  <FontAwesomeIcon icon={faExternalLink} />
+                  </a>
                   </button>
                 </td>
               </tr>

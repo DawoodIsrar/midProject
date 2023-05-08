@@ -33,10 +33,11 @@ export default function Homepage() {
   const copy=()=>{
     
     navigator.clipboard.writeText(cp);
-  
-
   }
 
+  const change=(e)=>{
+       setDate(e.target.value)   
+  }
 
   return (
     <div className="home">
@@ -56,7 +57,7 @@ export default function Homepage() {
           class="dte"
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}>
+          onChange={change}>
         </input>
        
         <button type="submit" class="btn" onClick={btn}>

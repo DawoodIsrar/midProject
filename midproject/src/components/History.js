@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faEdit, faExternalLinkSquareAlt, faLink, faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faExternalLinkSquareAlt, faLink, faExternalLink, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
 export default function History() {
@@ -39,6 +39,7 @@ export default function History() {
    setLinkUrl(array[index].url)
    
   }
+  
 
   return (
     <>
@@ -70,6 +71,9 @@ export default function History() {
                   }
                     
                   </form>}
+                  <button onClick={() => navigator.clipboard.writeText(history.url)}>
+                    <FontAwesomeIcon icon={faCopy} />
+                  </button>
                   <button onClick={() => handleEdit(index)}>
                     <FontAwesomeIcon icon={faEdit} />
                   </button>
